@@ -1,35 +1,18 @@
-# Inherit device configuration for Droid Atrix HD.
-$(call inherit-product, device/motorola/mb886/full_mb886.mk)
-
-# Inherit some common KylinMod stuff.
+# Inherit some common KM stuff. 
 $(call inherit-product, vendor/kylin/config/common_full_phone.mk)
-
-# Inherit some common KylinMod stuff.
-$(call inherit-product, vendor/kylin/config/gsm.mk)
-
-#
-# Setup device specific product configuration.
-#
-PRODUCT_NAME := km_mb886
-PRODUCT_BRAND := ATT
-PRODUCT_DEVICE := mb886
-PRODUCT_MODEL := mb886
-PRODUCT_MANUFACTURER := Motorola
-PRODUCT_RELEASE_NAME := Motorola Atrix HD
-PRODUCT_SFX := cn
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 720
 TARGET_SCREEN_HEIGHT := 1280
 
-UTC_DATE := $(shell date +%s)
-DATE := $(shell date +%Y%m%d)
+# Release name
+PRODUCT_RELEASE_NAME := MB886
+PRODUCT_NAME := km_mb886
+
+$(call inherit-product, device/motorola/mb886/full_mb886.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-   PRODUCT_NAME=${PRODUCT_MODEL}_${PRODUCT_SFX} \
-   BUILD_NUMBER=${DATE} \
-   TARGET_DEVICE=${PRODUCT_DEVICE} \
-   BUILD_FINGERPRINT=${PRODUCT_BRAND}/${PRODUCT_MODEL}_${PRODUCT_SFX}/${PRODUCT_DEVICE}:${PLATFORM_VERSION}/${BUILD_ID}/${DATE}:user/release-keys \
-   PRIVATE_BUILD_DESC="${PRODUCT_DEVICE}-user ${PLATFORM_VERSION} ${BUILD_ID} ${DATE} release-keys" \
-   PRODUCT_BRAND=${PRODUCT_BRAND} \
-   BUILD_UTC_DATE=
+    PRODUCT_BRAND=motorola \
+    PRODUCT_NAME=MB886_att \
+    BUILD_PRODUCT=qinara \
+    BUILD_FINGERPRINT=motorola/MB886_att/qinara:4.1.1/9.8.0Q-97_MB886_FFW-20/27:user/release-keys
