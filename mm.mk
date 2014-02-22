@@ -1,5 +1,5 @@
-# Inherit some common KM stuff. 
-$(call inherit-product, vendor/kylin/config/common_full_phone.mk)
+# Inherit some common MM stuff. 
+$(call inherit-product, vendor/mm/config/common_full_phone.mk)
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 720
@@ -7,7 +7,7 @@ TARGET_SCREEN_HEIGHT := 1280
 
 # Release name
 PRODUCT_RELEASE_NAME := MB886
-PRODUCT_NAME := km_mb886
+PRODUCT_NAME := mm_mb886
 
 $(call inherit-product, device/motorola/mb886/full_mb886.mk)
 
